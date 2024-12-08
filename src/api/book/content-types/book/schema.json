@@ -33,12 +33,6 @@
       "type": "decimal",
       "required": true
     },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "books"
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -67,6 +61,12 @@
     "language": {
       "type": "string",
       "default": "English"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "books"
     }
   }
 }

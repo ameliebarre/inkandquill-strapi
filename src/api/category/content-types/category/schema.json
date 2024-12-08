@@ -35,9 +35,9 @@
     },
     "books": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::book.book",
-      "mappedBy": "category"
+      "mappedBy": "categories"
     }
   }
 }
