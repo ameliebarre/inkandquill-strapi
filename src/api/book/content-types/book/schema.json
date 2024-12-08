@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "books",
+  "info": {
+    "singularName": "book",
+    "pluralName": "books",
+    "displayName": "Book",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "author": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "summary": {
+      "type": "blocks",
+      "required": true
+    },
+    "isbn": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "books"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "isNewRelease": {
+      "type": "boolean",
+      "default": false
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "publicationDate": {
+      "type": "date",
+      "required": true
+    },
+    "numberOfPages": {
+      "type": "integer"
+    },
+    "language": {
+      "type": "string",
+      "default": "English"
+    }
+  }
+}

@@ -32,6 +32,12 @@
     },
     "slug": {
       "type": "string"
+    },
+    "books": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::book.book",
+      "mappedBy": "category"
     }
   }
 }
