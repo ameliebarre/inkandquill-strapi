@@ -1,9 +1,8 @@
-const { format } = require("date-fns");
+const { format, addMonths } = require("date-fns");
 
 module.exports = {
-  "0 0 */30 * *": async ({ strapi }) => {
-    const thirtyDaysAgo = new Date();
-    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+  "0 0 1 */2 *": async ({ strapi }) => {
+    const twoMonthsAgo = addMonths(new Date(), -2); // Subtract 2 months
 
     console.log("Cron job running every minute");
 
@@ -11,7 +10,7 @@ module.exports = {
       const books = await strapi.entityService.findMany("api::book.book", {
         filters: {
           isNewRelease: true,
-          publicationDate: { $lt: thirtyDaysAgo.toISOString() },
+          publicationDate: { $lt: twoMonthsAgo.toISOString() },
         },
       });
 
