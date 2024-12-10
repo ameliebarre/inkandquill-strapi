@@ -22,6 +22,11 @@
       "relation": "manyToMany",
       "target": "api::book.book",
       "inversedBy": "series"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }
