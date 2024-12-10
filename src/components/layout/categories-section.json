@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_layout_categories_sections",
+  "info": {
+    "displayName": "Category Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "bookcategory": {
+      "displayName": "book-category",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.book-category"
+    }
+  }
+}

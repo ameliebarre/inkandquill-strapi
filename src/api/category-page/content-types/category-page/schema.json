@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "category_pages",
+  "info": {
+    "singularName": "category-page",
+    "pluralName": "category-pages",
+    "displayName": "Category Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "layout.categories-section"
+      ]
+    }
+  }
+}

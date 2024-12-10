@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_components_book_categories",
+  "info": {
+    "displayName": "book-category",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    }
+  }
+}
