@@ -18,6 +18,7 @@ export default factories.createCoreController(
               image: {
                 fields: ["url", "alternativeText"],
               },
+              authors: true,
             },
           },
         },

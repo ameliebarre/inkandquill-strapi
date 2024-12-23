@@ -15,11 +15,6 @@
     "title": {
       "type": "string",
       "required": true,
-      "unique": true
-    },
-    "author": {
-      "type": "string",
-      "required": true,
       "unique": false
     },
     "summary": {
@@ -35,7 +30,7 @@
     },
     "image": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "allowedTypes": [
         "images",
@@ -68,14 +63,26 @@
       "target": "api::category.category",
       "inversedBy": "books"
     },
-    "series": {
+    "authors": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::serie.serie",
+      "target": "api::author.author",
       "mappedBy": "books"
     },
-    "bookSerieNumber": {
-      "type": "integer"
+    "firstPublicationDate": {
+      "type": "date"
+    },
+    "editor": {
+      "type": "string"
+    },
+    "format": {
+      "type": "enumeration",
+      "enum": [
+        "Hardcover",
+        "Paperback",
+        "eBook",
+        "Kindle Edition"
+      ]
     }
   }
 }

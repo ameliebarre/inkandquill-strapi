@@ -12,6 +12,13 @@ export default factories.createCoreController(
 
       const entity = await strapi.db.query("api::book.book").findOne({
         where: { slug: id },
+        populate: {
+          image: {
+            fields: ["url", "alternativeText"],
+          },
+          authors: true,
+          categories: true,
+        },
       });
 
       const sanitizedEntity = await this.sanitizeOutput(entity, ctx);

@@ -38,6 +38,12 @@
       "relation": "manyToMany",
       "target": "api::book.book",
       "mappedBy": "categories"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "categories"
     }
   }
 }
